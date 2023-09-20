@@ -43,4 +43,19 @@ const createUser = async (id, username, phone, email, password) => {
     }
 }
 
-module.exports = { createUser }
+const createFirm = async (id, reg_no, name, proprietor, nominee, phone, email, trade_license, uid) => {
+    try {
+        let sql = `
+            INSERT INTO firm
+            VALUES("${id}", "${reg_no}", "${name}", "${proprietor}", "${nominee}", "${phone}", "${email}", "${trade_license}", "${uid}")
+        `;
+
+        const result = await pool.query(sql);
+        return result;
+    }
+    catch (err) {
+        throw new Error("Error adding firm in the database: " + err);
+    }
+}
+
+module.exports = { createUser, createFirm }

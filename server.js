@@ -4,7 +4,7 @@ const port = 8080;
 
 app.use(express.json());
 
-const { createUser } = require('./database')
+const { createUser, createFirm } = require('./database')
 
 // Define a route
 app.get('/', (req, res) => {
@@ -17,8 +17,16 @@ app.post('/createUser', (req, res) => {
     createUser(id, username, phone, email, password).catch(err => {
         res.status(500).json({ error: `Internal Server Error: ${err}` })
     })
-    res.end()
+    res.sendStatus(200);
 });
+
+app.post('/createFirm', (req, res) => {
+    const { id, reg_no, name, proprietor, nominee, phone, email, trade_license, uid } = req.body
+    createFirm(id, reg_no, name, proprietor, nominee, phone, email, trade_license, uid).catch(err => {
+        res.status(500).json({ error: `Internal Server Error: ${err}` })
+    })
+    res.sendStatus(200);
+})
 
 // Start the server
 app.listen(port, () => {
