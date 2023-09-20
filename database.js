@@ -25,3 +25,22 @@ async function checkDatabaseConnection() {
 
 // Call the function to check the database connection
 checkDatabaseConnection();
+
+
+
+const createUser = async (id, username, phone, email, password) => {
+    try {
+        let sql = `
+            INSERT INTO user
+            VALUES("${id}", "${username}", "${phone}", "${email}", "${password}")
+        `;
+
+        const result = await pool.query(sql);
+        return result;
+    }
+    catch (err) {
+        throw new Error("Error adding user in the database");
+    }
+}
+
+module.exports = { createUser }
