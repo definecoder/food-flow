@@ -28,11 +28,11 @@ checkDatabaseConnection();
 
 
 
-const createUser = async (id, username, phone, email, password) => {
+const createUser = async (username, phone, email, password) => {
     try {
         let sql = `
-            INSERT INTO user
-            VALUES("${id}", "${username}", "${phone}", "${email}", "${password}")
+            INSERT INTO user (username, phone, email, password)
+            VALUES("${username}", "${phone}", "${email}", "${password}")
         `;
 
         const result = await pool.query(sql);
@@ -43,11 +43,11 @@ const createUser = async (id, username, phone, email, password) => {
     }
 }
 
-const createFirm = async (id, reg_no, name, proprietor, nominee, phone, email, trade_license, uid) => {
+const createFirm = async (reg_no, name, proprietor, nominee, phone, email, trade_license, uid) => {
     try {
         let sql = `
-            INSERT INTO firm
-            VALUES("${id}", "${reg_no}", "${name}", "${proprietor}", "${nominee}", "${phone}", "${email}", "${trade_license}", "${uid}")
+            INSERT INTO firm (reg_no, name, proprietor, nominee, phone, email, trade_license, uid)
+            VALUES("${reg_no}", "${name}", "${proprietor}", "${nominee}", "${phone}", "${email}", "${trade_license}", "${uid}")
         `;
 
         const result = await pool.query(sql);

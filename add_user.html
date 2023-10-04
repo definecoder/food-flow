@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link rel="stylesheet" href="add_user.css">
+    <script src="https://kit.fontawesome.com/cd1e44ef74.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="left-sidebar">
+            <div class="image-container">
+                <img src="truck.jpeg" alt="">
+            </div>
+            <div class="navbar">
+                <h2>Home</h2>
+                <h2>Profile</h2>
+                <h2>My Firms</h2>
+                <h2>Logout</h2>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <div class="welcome-firm-container">
+                <div class="welcome-firm-message">
+                    Welcome Mesars bolaka overseas
+                </div>
+            </div>
+            <div class="add-user-wrapper">
+                <div class="add-user-heading-wrapper">
+                    <i class="fa-solid fa-circle-plus" style="color: #18bf1a;"></i>
+                    <h2>Add User Information</h2>
+                </div>
+                <div class="form-wrapper">
+
+                    <div class="form-field-wrapper">
+                        <label for="username">User Name</label>
+                        <input type="text" name="username" id="username" required>
+                    </div>
+
+                    <div class="form-field-wrapper">
+                        <label for="contact_no">Contact No</label>
+                        <input type="tel" name="contact_no" id="contact_no" required>
+                    </div>
+                    <div class="form-field-wrapper">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="form-field-wrapper">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div class="form-field-wrapper">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" name="confirm_password" id="confirm_password" required>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-wrapper">
+                <div class="next-button-wrapper">
+                    <button class="next-button">Next</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="add_user.js"></script>
+</body>
+
+</html>
